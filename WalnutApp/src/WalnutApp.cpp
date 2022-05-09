@@ -3,13 +3,16 @@
 
 #include "Walnut/Image.h"
 
+#include <iostream>
+
 class ExampleLayer : public Walnut::Layer
 {
 public:
 	virtual void OnUIRender() override
 	{
 		ImGui::Begin("Hello");
-		ImGui::Button("Button");
+		if(ImGui::Button("World"))
+			std::cout << "Hello world" << std::endl;
 		ImGui::End();
 
 		ImGui::ShowDemoWindow();
